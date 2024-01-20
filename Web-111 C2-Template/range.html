@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range</title>
+</head>
+<body>
+    <div>
+        <input type="number" name="" id="from">
+        <input type="number" name="" id="to">
+        <button>Apply</button>
+    </div>
+</body>
+
+<script>
+    let button = document.querySelector("button");
+    let product_data = [];
+
+    button.addEventListener("click",function(){
+        let formInpValue = +document.getElementById("from").value;
+
+        let toInpValue = +document.getElementById("to").value;
+       let filtered = product_data.filter(function(el){
+        if(el.price >= formInpValue && el.price <= toInpValue){
+            return true;
+        }else{
+            return false;
+        }
+       })
+    })
+</script>
+</html>

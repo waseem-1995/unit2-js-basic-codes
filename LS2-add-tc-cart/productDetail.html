@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+  </head>
+  <body>
+    <h1>Product Details</h1>
+    <div id="parent"></div>
+  </body>
+
+  <script>
+    let LSData = JSON.parse(localStorage.getItem("product"));
+    let parent = document.getElementById("parent");
+
+    let cartLS = JSON.parse(localStorage.getItem("cart"));
+    if(cartLS === null){
+        cartLS = [];
+    }
+
+    // From Here DOM Creating Starts
+    let product = document.createElement("div");
+    product.setAttribute("class", "product");
+    let productImg = document.createElement("img");
+    productImg.src = LSData.img;
+    let brand = document.createElement("h1");
+    brand.innerText = LSData.brand;
+
+    let addToCart = document.createElement("button");
+    addToCart.innerText = "Add To Cart";
+
+    addToCart.addEventListener("click",function(){
+       cartLS.push(LSData);
+       localStorage.setItem("cart",JSON.stringify(cartLS));
+    })
+    product.append(productImg, brand,addToCart);
+    parent.append(product);
+  </script>
+</html>

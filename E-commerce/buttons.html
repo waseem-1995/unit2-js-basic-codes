@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  // createElement("button")
+  // innerText
+
+  let colorObj = [
+    { name: "Primary", bgColor: "blue" },
+    { name: "Secondary", bgColor: "grey" },
+    { name: "Success", bgColor: "green" },
+    { name: "Danger", bgColor: "red" },
+    { name: "Warning", bgColor: "yellow" },
+    { name: "Info", bgColor: "cyan" },
+    { name: "Light", bgColor: "whitesmoke" },
+    { name: "Dark", bgColor: "black" },
+    { name: "Link", bgColor: "lightblue" },
+  ];
+
+  //using for loop
+  //   for (let i = 0; i < colorObj.length; i++) {
+  //     let btn = document.createElement("button");
+  //     btn.innerText = colorObj[i].name;
+  //     btn.style.background = colorObj[i].bgColor
+  //     document.querySelector("body").append(btn);
+  //   }
+
+  // using forEach
+
+  colorObj.map(function (elem) {
+    console.log(elem); // console.log(colorObj[i])
+    let btn = document.createElement("button");
+    btn.innerText = elem.name;
+    btn.style.background = elem.bgColor;
+    document.querySelector("body").append(btn);
+  });
+
+  
+
+
+</script>

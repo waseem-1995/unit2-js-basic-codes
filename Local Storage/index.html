@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <h1>Counter:- <span id="counter">0</span></h1>
+    <button id="add">+</button>
+    <button id="minus">-</button>
+</body>
+<script>
+    let counter = document.getElementById("counter");
+    let addBtn = document.getElementById("add");
+    let minusBtn = document.getElementById("minus");
+    let counterState = 0;
+    let LSData = localStorage.getItem("counterState");
+    if(LSData != null){
+        counterState = LSData;
+        counter.innerText = counterState;
+    }
+    // When LS is present -> returns value but when not present null;
+    // array , object need JSON
+    // all browser allow us to save some value in the browser itself -> 5mb 
+
+    addBtn.addEventListener("click",function(){
+       counterState++;
+       counter.innerText = counterState;
+       localStorage.setItem("counterState",counterState);
+
+    })
+
+    minusBtn.addEventListener("click",function(){
+        counterState--;
+       counter.innerText = counterState;
+       localStorage.setItem("counterState",counterState);
+    })
+
+</script>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Page</title>
+  </head>
+  <body>
+    <select id="filter">
+      <option value="">Select Category</option>
+      <option value="Laptop">Laptop</option>
+      <option value="Mobile">Mobile</option>
+    </select>
+    <input type="text" id="search" />
+    <div id="parent"></div>
+  </body>
+
+  <script>
+    let product_data = [
+      {
+        brand: "Zebronics",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfboat000113_1_cc965b26.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Laptop",
+      },
+      {
+        brand: "Zebronics",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfblta000011_1.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Mobile",
+      },
+      {
+        brand: "Zebronics",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/b/c/bc60a_1_c82d81cb.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Head Phones",
+      },
+      {
+        brand: "Zebronics",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/6/1/619660798426_1_727221ba.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Speakers",
+      },
+      {
+        brand: "Zebronics",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/c/_/c_8907605107849_1_655fcbdf.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Smart TV",
+      },
+      {
+        brand: "Apple",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/c/o/cor-nyfcrca000039_1_369033fe.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Laptop",
+      },
+      {
+        brand: "Apple",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/a/m/ambrane_8904258106557_1_aff3c266.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Mobile",
+      },
+      {
+        brand: "Apple",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfblta000009_1.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "LaptopHead Phones",
+      },
+      {
+        brand: "Apple",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/z/b/zb_8906108615899_1_44867a4c.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Speakers",
+      },
+      {
+        brand: "Apple",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/u/d/ud_bk_1_2f275806.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Smart TV",
+      },
+      {
+        brand: "HP",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/g/r/grey_1_398b5873.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Laptop",
+      },
+      {
+        brand: "HP",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/b/o/boult-audio-ba-nk-freepods-black_1_17c2dc71.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Mobile",
+      },
+      {
+        brand: "HP",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/d/i/dive_green_1.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Head Phones",
+      },
+      {
+        brand: "HP",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/p/e/pebble-8906086572115_1_34a9b9fd.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Speakers",
+      },
+      {
+        brand: "HP",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/p/p/pportronics-por-1195_1_e9dc8e9f.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Smart TV",
+      },
+      {
+        brand: "Dell",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/m/u/musebud_grey.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Laptop",
+      },
+      {
+        brand: "Dell",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfboat000113_1_cc965b26.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Mobile",
+      },
+      {
+        brand: "Dell",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfboat000113_1_cc965b26.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Head Phones",
+      },
+      {
+        brand: "Dell",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfboat000113_1_cc965b26.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Speakers",
+      },
+      {
+        brand: "Dell",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfboat000113_1_cc965b26.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Smart TV",
+      },
+      {
+        brand: "Vivo",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfboat000113_1_cc965b26.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Laptop",
+      },
+      {
+        brand: "Vivo",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfboat000113_1_cc965b26.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Mobile",
+      },
+      {
+        brand: "Vivo",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfboat000113_1_cc965b26.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Head Phones",
+      },
+      {
+        brand: "Vivo",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfboat000113_1_cc965b26.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Speakers",
+      },
+      {
+        brand: "Vivo",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfboat000113_1_cc965b26.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Smart TV",
+      },
+      {
+        brand: "Oppo",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfboat000113_1_cc965b26.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Laptop",
+      },
+      {
+        brand: "Oppo",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfboat000113_1_cc965b26.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Mobile",
+      },
+      {
+        brand: "Oppo",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfboat000113_1_cc965b26.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Head Phones",
+      },
+      {
+        brand: "Oppo",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfboat000113_1_cc965b26.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Speakers",
+      },
+      {
+        brand: "Oppo",
+        img: "https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-550,/pub/media/catalog/product/n/y/nyfboat000113_1_cc965b26.jpg?rnd=20200526195200",
+        price: 100,
+        details:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, sequi.",
+        catagory: "Smart TV",
+      },
+    ];
+    let parent = document.querySelector("#parent");
+    let filterDOM = document.querySelector("#filter");
+    let search = document.getElementById("search");
+
+    function renderDOM(data) {
+      parent.innerHTML = "";
+      data.forEach(function (el) {
+        let product = document.createElement("div");
+        let image = document.createElement("img");
+        image.setAttribute("src", el.img);
+        let brand = document.createElement("h1");
+        brand.innerText = el.brand;
+        let category = document.createElement("p");
+        category.innerText = el.catagory;
+        product.append(image, brand, category);
+        parent.append(product);
+      });
+    }
+
+    renderDOM(product_data); // data ==== product_data
+    filterDOM.addEventListener("change", function () {
+      let filteredProducts = product_data.filter(function (el) {
+        if (el.catagory === filter.value) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+      let searchedProducts = filteredProducts.filter(function (el) {
+        return el.brand
+          .toLocaleUpperCase()
+          .includes(search.value.toLocaleUpperCase());
+      });
+      renderDOM(searchedProducts); // data === filteredProducts
+    });
+
+    search.addEventListener("input", function () {
+      let filteredProducts = product_data.filter(function (el) {
+        if (el.catagory === filter.value) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+      let searchedProducts = filteredProducts.filter(function (el) {
+        return el.brand
+          .toLocaleUpperCase()
+          .includes(search.value.toLocaleUpperCase());
+      });
+      renderDOM(searchedProducts);
+    });
+  </script>
+  <!-- img -> image 
+  h1 -> product brand
+  p -> product category -->
+  <!-- puma -> PUMA 
+  umar -> UMER
+  Um -> UMA -->
+</html>
+
+<!-- [{laptop,apple},{mobile,apple},{mobile,oppo},{laptop,oppo},{laptop:hp}]
+ pp -> [{laptop,apple},{mobile,apple},{mobile,oppo},{laptop,oppo}]
+ laptop -> [{laptop,apple},{laptop,oppo}] -->
+
+<!-- [Apple,OPpo, HP];
+[APPLE,OPPO,HP];
+pp -> PP
+true , true,false; -->

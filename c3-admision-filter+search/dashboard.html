@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Students</title>
+  </head>
+  <body>
+    <div class="nav">
+      <a href="./index.html">Home Page</a>
+      <a href="./dashboard.html">Dashboard</a>
+      <a href="./admitted.html">Admitted</a>
+      <a href="./rejected.html">Rejected</a>
+    </div>
+    <input placeholder="Search" type="text" id="search">
+    <select  id="filter">
+      <option value="">Select Course</option>
+      <option value="Web-Development">Web-Development</option>
+      <option value="Android-Development">Android-Development</option>
+      <option value="Data-Analitics">Data-Analitics</option>
+    </select>
+    <table cellspacing="0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Course</th>
+          <th>Gender</th>
+          <th>Phone</th>
+          <th>Admit</th>
+          <th>Reject</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </body>
+  <script src="./scripts/dashboard.js"></script>
+</html>

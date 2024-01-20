@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Page</title>
+  </head>
+  <body>
+    <h1>Total Cart Value:- <span id="cart-total">0</span></h1>
+    <div id="parent"></div>
+  </body>
+  <script>
+    let parent = document.getElementById("parent");
+    let cartLS = JSON.parse(localStorage.getItem("cart"));
+    let cartTotal = document.getElementById("cart-total");
+    let cartTotalState = 0;
+
+    if (cartLS === null) {
+      cartLS = [];
+    }
+
+    cartLS.forEach(function (el) {
+        cartTotalState += el.price;
+      let product = document.createElement("div");
+      product.setAttribute("class", "product");
+      let productImg = document.createElement("img");
+      productImg.src = el.img;
+      let brand = document.createElement("h1");
+      brand.innerText = el.brand;
+      product.append(productImg, brand);
+      parent.append(product);
+    });
+    cartTotal.innerText = cartTotalState;
+  </script>
+</html>

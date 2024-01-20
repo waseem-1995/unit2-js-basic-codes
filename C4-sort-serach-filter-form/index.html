@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Product</title>
+  </head>
+  <body>
+    <div id="navbar">
+      <a href="./index.html">Home</a>
+      <a href="./dashboard.html">Dashboard</a>
+      <a href="./sold.html">Sold</a>
+      <a href="./rejected.html">Rejected</a>
+    </div>
+    <div class="form">
+      <h1>Add Product Details</h1>
+      <form>
+        <input placeholder="Name" type="text" id="name" />
+        <input placeholder="Price" type="number" id="price" />
+        <select id="category">
+          <option value="">Select Category</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Fashion">Fashion</option>
+          <option value="Grocery">Grocery</option>
+          <option value="Books">Books</option>
+        </select>
+        <select id="listed">
+          <option value="">Select Listed Site</option>
+          <option value="Amazon">Amazon</option>
+          <option value="Flipkart">Flipkart</option>
+          <option value="Mintra">Mintra</option>
+          <option value="Nykaa">Nykaa</option>
+        </select>
+        <input type="text" placeholder="Brand Name" id="brand" />
+        <input type="number" id="reviews" placeholder="Reviews" />
+        <button>Submit</button>
+      </form>
+    </div>
+  </body>
+  <script src="./Scripts/form.js"></script>
+</html>
